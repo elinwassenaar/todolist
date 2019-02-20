@@ -94,9 +94,8 @@ button:focus {
     background-color: #A59AA4;
 }
 
-/* waarom werkt onderstaande niet? zie ook .deletetodo */
-.listitem.done.deletetodo{
+/* waarom werkt text-dec hieronder niet? */
+.listitem.done .deletetodo{
     text-decoration: none;
     color: white;
-    
 }
