@@ -20,8 +20,8 @@ addButton.addEventListener('click', () => {
 
 
 
-//variabele voor de deleteknoppen - iets met array?
-const deleteButton = document.querySelectorAll('.deletetodo');
+//variabele voor de deleteknoppen - iets met array? const kan niet met All
+const deleteButton = document.querySelector('.deletetodo');
 
 
 
@@ -30,8 +30,8 @@ const deleteButton = document.querySelectorAll('.deletetodo');
 
 
 //verwijderen todo
-deleteButton.addEventListener('click', ()=> {
-   console.log('dit werkt');
+deleteButton.addEventListener('click', event => {
+   console.log('dit werkt alleen op het eerste list item');
 });
 
 //iets met targeten van de parent van dit ding
