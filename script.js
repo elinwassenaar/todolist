@@ -3,7 +3,7 @@ const userInput = document.querySelector('.userinput');
 const addButton = document.querySelector('.addtodo');
 const toDoList = document.querySelector('.todolist');
 const listItem = document.querySelector('.listitem');
-console.log(listItem);
+console.log(listItem); //hiermoetnogietsmee
 
 // add = list item maken, input field weer leeg maken
 
@@ -11,7 +11,7 @@ addButton.addEventListener('click', () => {
     if (userInput.value === '') {
         return;
     } else {
-        toDoList.innerHTML += `<li class="listitem">${userInput.value}<button class="deletetodo">×</button></li>`;
+        toDoList.innerHTML += `<li class="listitem"><p>${userInput.value}</p><button class="deletetodo">×</button></li>`;
         userInput.value = '';
     };
 });
