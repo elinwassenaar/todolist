@@ -1,0 +1,100 @@
+html { 
+    box-sizing: border-box; 
+}
+
+*, *:after, *:before { 
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0px;
+    height: 100vh;
+    background-color: #F4C9A1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.inputarea {
+    background-color: #5E4B56;
+    height: 25vh;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 0.08rem solid #8c8c8c;
+    border-radius: 15px;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+.addtodo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 0.08rem solid #8c8c8c;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.listarea {
+    background-color: #D7E1E8;
+    height: 75vh;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.todolist {
+    list-style: none;
+}
+
+.listitem {
+    margin: 1rem;
+    padding: 2rem;
+    width: 80vw;
+    background-color:#FFFFFF;
+    border: 0rem solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deletetodo {
+    font-family: 'Montserrat', sans-serif;
+    /* font-size: 2rem; */
+    /* height: 2rem; */
+    /* width: 2rem; */
+    text-decoration: none;
+    border: 0.05rem solid limegreen;
+    background-color: white;
+    cursor: pointer;
+}
+
+.listitem.done {
+    text-decoration: line-through;
+    background-color: #A59AA4;
+}
+
+/* waarom werkt onderstaande niet? zie ook .deletetodo */
+.listitem.done.deletetodo{
+    text-decoration: none;
+}
