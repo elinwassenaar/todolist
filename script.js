@@ -3,35 +3,32 @@ const userInput = document.querySelector('.userinput');
 const addButton = document.querySelector('.addtodo');
 const toDoList = document.querySelector('.todolist');
 const listItem = document.querySelector('.listitem');
-console.log(listItem); //hiermoetnogietsmee
+const deleteButton = document.querySelector('.deletetodo');
 
 // add = list item maken, input field weer leeg maken
-
 addButton.addEventListener('click', () => {
     if (userInput.value === '') {
         return;
-    } else {
-        toDoList.innerHTML += `<li class="listitem"><p>${userInput.value}</p><button class="deletetodo">×</button></li>`;
-        userInput.value = '';
-    };
-});
-
-// toDoItem maken
-
-
-
-//variabele voor de deleteknoppen - iets met array? const kan niet met All
-const deleteButton = document.querySelector('.deletetodo');
-
-
-
+    }
+    toDoList.innerHTML += `<li class="listitem"><p>${userInput.value}</p><button class="deletetodo">×</button></li>`;
+    userInput.value = '';
+    });
 
 //afvinken todo & on-afvinken todo met toggle
-
-
-//verwijderen todo
-deleteButton.addEventListener('click', event => {
-   console.log('dit werkt alleen op het eerste list item');
+const toggleDone = listItem => {
+    listItem.classList.toggle('done');
+};
+toDoList.addEventListener('click', () => {
+    toggleDone(event.target);
 });
 
-//iets met targeten van de parent van dit ding
+//verwijderen todo
+const deleteItem = deleteToDo => {
+    deleteToDo.remove();
+};
+toDoList.addEventListener('click', () => {
+   if (event.target.classList.contains('deletetodo')) {
+        deleteItem(event.target.closest(".listitem"));
+        return;
+   };     
+});
