@@ -3,10 +3,6 @@ const userInput = document.querySelector('.userinput');
 const addButton = document.querySelector('.addtodo');
 const toDoList = document.querySelector('.todolist');
 
-// deze twee doen niks want bestaan nog niet in DOM
-// const listItem = document.querySelector('.listitem');
-// const deleteButton = document.querySelector('.deletetodo');
-
 // add = list item maken, input field weer leeg maken
 addButton.addEventListener('click', () => {
     if (userInput.value === '') {
@@ -16,24 +12,21 @@ addButton.addEventListener('click', () => {
     userInput.value = '';
 });
 
-//afvinken todo & on-afvinken todo met toggle
+//variabelen voor afvinken en verwijderen
 const toggleDone = listItem => {
     listItem.classList.toggle('done');
 };
-toDoList.addEventListener('click', () => {
-    toggleDone(event.target);
-});
 
-//verwijderen todo
 const deleteItem = deleteToDo => {
     deleteToDo.remove();
 };
-toDoList.addEventListener('click', () => {
-   if (event.target.classList.contains('deletetodo')) {
-        deleteItem(event.target.closest(".listitem"));
-        return; //slaat deze return wel ergens op?
-   };     
-});
 
-// ik gebruik twee keer een eventlistener op ToDolist, kun je dus combineren met
-// die class check
+//acties voor afvinken en verwijderen
+toDoList.addEventListener('click', () => {
+    if (event.target.classList.contains('listitem')) {
+        toggleDone(event.target);
+    }
+    if (event.target.classList.contains('deletetodo')) {
+        deleteItem(event.target.closest(".listitem"));
+    }
+});
