@@ -11,9 +11,12 @@ addButton.addEventListener('click', () => {
     toDoList.innerHTML += `<li class="listitem"><p>${userInput.value}</p><button class="deletetodo">×</button></li>`;
     userInput.value = '';
 });
-//hierboven kun je ook 'submit' gebruiken, als je een form in je HTML hebt.
-//dan wel preventDefault omdat ie het niet naar de server hoeft te sturen,
-//maar dan werkt het ook met enter in plaats van alleen met klik
+// hierboven kun je ook 'submit' gebruiken, als je een form in je HTML hebt.
+// dan wel preventDefault omdat ie het niet naar de server hoeft te sturen,
+// maar dan werkt het ook met enter in plaats van alleen met klik
+
+// EN: die += zorgt ervoor dat hele lijst opnieuw geladen wordt met extra element
+// is niet echt best practice ivm performance en bijv. animaties
 
 //variabelen voor afvinken en verwijderen
 const toggleDone = listItem => {
